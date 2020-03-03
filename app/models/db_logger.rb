@@ -1,0 +1,2 @@
+class DbLogger < ApplicationRecord
+end
