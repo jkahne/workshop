@@ -13,18 +13,18 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, autocomplete: 'off' %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, autocomplete: 'off' %>
   </div>
 
 
   <div class="field">
     <%= form.label :popularity %>
-    <%= form.number_field :popularity %>
+    <%= form.number_field :popularity, autocomplete: 'off' %>
   </div>
 
   <div class="field">
