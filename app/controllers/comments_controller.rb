@@ -10,11 +10,14 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to @post
     else
-      @comments =  @post.comments
+      @comments =  @post.comments.all
       render 'posts/show'
-
-      # redirect_to @post, notice: @comment.errors.full_messages
     end
+  end
+
+  def index
+    @post = Post.find(params[:post_id])
+    redirect_to  @post
   end
 
   private
