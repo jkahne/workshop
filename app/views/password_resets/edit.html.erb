@@ -1,0 +1,36 @@
+<div class="password_reset_form">
+
+  <%= form_with(url: password_reset_path, method: :put, model: @user, local: true) do |form| %>
+    <%= hidden_field_tag 'password_reset_token', params[:password_reset_token]  %>
+
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :email, 'Email' %>
+      <%= form.text_field :email, autocomplete: 'off'  %>
+    </div>
+
+    <div class="field">
+      <%= form.label :password, 'Password' %>
+      <%= form.password_field :password  %>
+    </div>
+
+    <div class="field">
+      <%= form.label :password_confirmation, 'Password Confirmation' %>
+      <%= form.password_field :password_confirmation  %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit value: "Reset Password"  %>
+    </div>
+
+  <% end %>
+</div>
