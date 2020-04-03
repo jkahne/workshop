@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
 
   resources :registrations, only: [:index, :new, :create]
+  resource :profile, only: [:show, :update]
 
 
   resources :users 
