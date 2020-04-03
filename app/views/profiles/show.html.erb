@@ -1,0 +1,30 @@
+<%= form_with url: profile_path,  model: current_user, local: true do |form| %>
+  <% if current_user.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% current_user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= form.label :name, 'Name'  %> 
+    <%= form.text_field :name, autocomplete: 'off'  %>
+  </div>
+  <div class="field">
+    <%= form.label :email, 'Email'  %> 
+    <%= form.text_field :email, autocomplete: 'off'  %>
+  </div>
+  <div class="field">
+    <%= form.label :password, 'Password'  %> 
+    <%= form.text_field :password, autocomplete: 'off'  %>
+  </div>
+  <div class="field">
+    <%= form.label :password_confirmation, 'Password Confirmation'  %> 
+    <%= form.text_field :password_confirmation, autocomplete: 'off'  %>
+  </div>
+  <div class="actions">
+    <%= form.submit value: "Update"  %>
+  </div>
+<% end %>
