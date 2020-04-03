@@ -1,0 +1,18 @@
+<div class="password_reset_form">
+
+  <%= form_with(url: password_reset_path, local: true) do |form| %>
+
+    <div class="field">
+      <%= form.label :email, 'Email' %>
+      <%= form.text_field :email, autocomplete: 'off'  %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit value: "Submit"  %>
+      or <%= link_to 'log in', login_path %>
+      or <%= link_to 'sign up', new_registration_path %>
+    </div>
+
+  <% end %>
+</div>
+
