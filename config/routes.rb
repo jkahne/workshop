@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     delete 'logout' => :destroy
   end
 
+
+  resources :registrations, only: [:index, :new, :create]
+
+
   resources :users 
   resources :posts do 
     resources :comments
@@ -13,5 +17,5 @@ Rails.application.routes.draw do
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: "pages#index"
+  root to: "sessions#new"
 end
